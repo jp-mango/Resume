@@ -1,0 +1,55 @@
+:root{
+    --orange: hsl(31, 83%, 55%);
+    --navy: hsl(213, 28%, 19%);
+    --gray: hsl(0, 0%, 20%);
+    --off-white: hsl(23, 100%, 95%);
+    --primary-font: 'Roboto Slab', serif;
+    --secondary-font: 'Ubuntu', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+#navbar{
+    background-color: var(--navy);
+    margin: 0;
+}
+
+.name{
+    font-family: var(--primary-font);
+    font-size: 3rem;
+    color: var(--orange);
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+.nav-items{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: .5rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.nav-items a{
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+footer{
+    font-size: 0; /*Gets rid of weird lines between each image.*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+#email-logo, #github-logo, #linkedin-logo{
+    margin: 0 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
