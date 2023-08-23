@@ -1,54 +1,140 @@
-:root{
+:root {
     --orange: hsl(31, 83%, 55%);
     --navy: hsl(213, 28%, 19%);
-    --gray: hsl(0, 0%, 20%);
     --off-white: hsl(23, 100%, 95%);
+    --gray: hsl(0, 0%, 20%);
+
     --primary-font: 'Roboto Slab', serif;
     --secondary-font: 'Ubuntu', sans-serif;
 }
 
-body{
+body, html {
     margin: 0;
+    padding: 0;
+    background-color: var(--off-white);
 }
 
-#navbar{
+#navbar {
     background-color: var(--navy);
-    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
 }
 
-.name{
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+
+.name {
     font-family: var(--primary-font);
     font-size: 3rem;
     color: var(--orange);
     display: flex;
     justify-content: center;
-    margin: 0;
     padding: 1rem;
+    margin: 0;
 }
 
-.nav-items{
+.nav-items {
     display: flex;
-    justify-content: space-around;
-    margin: 0;
+    justify-content: space-evenly;
     padding: .5rem;
     list-style: none;
     font-size: 1.5rem;
+    margin: 0;
 }
 
-.nav-items a{
+.nav-items a {
     text-decoration: none;
     color: var(--off-white);
 }
 
-footer{
-    font-size: 0; /*Gets rid of weird lines between each image.*/
+.resume-content {
+    display: flex;
+    height: calc(100% - 3rem);
+    margin-top: 6rem;
+}
+
+.left-section {
+    flex: 1;
+    background-color: var(--off-white);
+    font-family: var(--secondary-font);
+    padding: 2rem; /* Start content at the top */
+}
+
+.headshot {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    margin: 2rem 0 0 2rem;
+    object-fit: cover; /* Ensure the image fits the container */
+}
+
+.certifications li{
+    margin: .5rem;
+}
+
+.skills{
+    padding-top: 5rem;
+}
+.skills li{
+    margin: .5rem;
+}
+
+.divider {
+    background-color: var(--gray); /* Color of the divider */
+    width: 0.05rem; /* Same width as the left section */
+    flex-grow: 0; /* Prevent stretching */
+    align-self: stretch; /* Stretch vertically */
+}
+
+
+
+.right-section {
+    flex: 2;
+    background-color: var(--off-white);
+    font-family: var(--secondary-font);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience{
+    padding-top: 2rem;
+}
+.experience li{
+    margin: 1rem;
+}
+
+.education li{
+    margin: 1rem;
+}
+
+.experience li p{
+    margin: 0;
+}
+
+.education li p{
+    margin: 0;
+}
+ul{
+    list-style-type: square;
+}
+footer {
+    font-size: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 3rem;
+    background-color: var(--orange);
 }
 
-#email-logo, #github-logo, #linkedin-logo{
+
+#email-logo, #github-logo, #linkedin-logo {
     margin: 0 5rem;
     width: 2.5rem;
     height: 2.5rem;
