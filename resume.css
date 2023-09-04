@@ -3,7 +3,6 @@
     --navy: hsl(213, 28%, 19%);
     --off-white: hsl(23, 100%, 95%);
     --gray: hsl(0, 0%, 20%);
-
     --primary-font: 'Roboto Slab', serif;
     --secondary-font: 'Ubuntu', sans-serif;
 }
@@ -27,7 +26,6 @@ body, html {
 .navbar-hidden {
     transform: translateY(-100%);
 }
-
 
 .name {
     font-family: var(--primary-font);
@@ -82,6 +80,7 @@ body, html {
 .skills{
     padding-top: 5rem;
 }
+
 .skills li{
     margin: .5rem;
 }
@@ -92,8 +91,6 @@ body, html {
     flex-grow: 0; /* Prevent stretching */
     align-self: stretch; /* Stretch vertically */
 }
-
-
 
 .right-section {
     flex: 2;
@@ -122,9 +119,11 @@ body, html {
 .education li p{
     margin: 0;
 }
+
 ul{
     list-style-type: square;
 }
+
 footer {
     font-size: 0;
     display: flex;
