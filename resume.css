@@ -52,17 +52,39 @@ body, html {
     color: var(--off-white);
 }
 
-.resume-content, .about-content, .project-content, .contact-content {
+.resume-content, .project-content, .contact-content {
     display: flex;
     height: calc(100% - 1rem);
-    margin-top: 6rem;
+    margin: 6rem 2rem;
+    color: var(--gray);
 }
 
-.left-section, .about-content, .project-content, .contact-content {
+.left-section, .project-content, .contact-content {
     flex: 1;
     background-color: var(--off-white);
     font-family: var(--secondary-font);
     padding: 2rem; /* Start content at the top */
+}
+
+.about-content{
+    display: flex;
+    font-family: var(--secondary-font);
+    flex-direction: column;
+    text-align: center;
+    margin: 12rem 2rem;
+    color: var(--gray);
+}
+
+.about-content p{
+    line-height: 2;
+}
+
+.about-content p a{
+    color: var(--navy);
+}
+
+.about-content p a:hover{
+    color: var(--orange);
 }
 
 .headshot {
@@ -125,7 +147,10 @@ ul{
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     font-size: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
