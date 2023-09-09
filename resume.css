@@ -171,7 +171,7 @@ footer {
 .card {
     width: 15rem;
     height: 25rem;
-    border: 1px solid var(--orange);
+    border: .5rem solid var(--orange);
     border-radius: 5px;
     box-shadow: none;
     overflow: hidden;
@@ -184,7 +184,7 @@ footer {
 /* Hover effect */
 .card:hover {
     transform: scale(1.2);
-    box-shadow: 0 .25rem .75rem var(--orange);
+    box-shadow: 0 .25rem .75rem var(--navy);
 }
 
 /* Style for the card content */
