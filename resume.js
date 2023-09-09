@@ -14,4 +14,3 @@ window.addEventListener('scroll', () => {
 
     prevScrollPos = currentScrollPos;
 });
-
