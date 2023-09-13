@@ -5,6 +5,7 @@
     --gray: hsl(0, 0%, 20%);
     --primary-font: 'Roboto Slab', serif;
     --secondary-font: 'Ubuntu', sans-serif;
+    --base-font-size: 16px;
 }
 
 body, html {
@@ -142,6 +143,39 @@ body, html {
     margin: 0;
 }
 
+.countdown-timer {
+    text-align: center;
+    max-width: 37.5rem;
+    margin: 6.25rem auto;
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 .623rem var(--gray);
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color:var(--navy);
+}
+
+p {
+    color: var(--gray);
+}
+
+#countdown {
+    font-size: 4rem;
+    color: var(--orange);
+    margin-top: 1rem;
+}
 ul{
     list-style-type: square;
 }
