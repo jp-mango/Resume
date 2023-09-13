@@ -53,6 +53,10 @@ body, html {
     color: var(--off-white);
 }
 
+.nav-items a:hover {
+    text-decoration: none;
+    color: var(--orange);
+}
 .resume-content, .project-content, .contact-content {
     display: flex;
     height: calc(100% - 1rem);
