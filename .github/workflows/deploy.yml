@@ -27,8 +27,8 @@ jobs:
       - name: Copy to S3
         run: | 
             aws s3 sync /resume_about.html s3://justinmenzies.com
-            aws s3 sync /resume_contact.html s3://justinmenzies.com
-            aws s3 sync /resume_home.html s3://justinmenzies.com
-            aws s3 sync /resume_projects.html s3://justinmenzies.com
-            aws s3 sync /resume.css s3://justinmenzies.com
-            aws s3 sync /resume.js s3://justinmenzies.com
+            aws s3 cp ./resume_contact.html s3://justinmenzies.com
+            aws s3 cp ./resume_home.html s3://justinmenzies.com
+            aws s3 cp ./resume_projects.html s3://justinmenzies.com
+            aws s3 cp ./resume.css s3://justinmenzies.com
+            aws s3 cp ./resume.js s3://justinmenzies.com
