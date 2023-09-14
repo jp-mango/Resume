@@ -27,4 +27,3 @@ jobs:
       - name: Copy to S3
         run: | 
             aws s3 sync ./src/ s3://justinmenzies.com
-            aws s3 sync ./images/ s3://justinmenzies.com
