@@ -20,5 +20,15 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       
+      - name: Empty S3 Bucket
+        run: |
+            aws s3 rm s3://justinmenzies.com --recursive
+      
       - name: Copy to S3
-        run: aws s3 sync . s3://justinmenzies.com
+        run: | 
+          aws s3 sync ./resume_about.html s3://justinmenzies.com
+          aws s3 sync ./resume_contact.html s3://justinmenzies.com
+          aws s3 sync ./resume_home.html s3://justinmenzies.com
+          aws s3 sync ./resume_projects.html s3://justinmenzies.com
+          aws s3 sync ./resume.css s3://justinmenzies.com
+          aws s3 sync ./resume.js s3://justinmenzies.com
