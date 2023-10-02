@@ -180,6 +180,7 @@ p {
     color: var(--orange);
     margin-top: 1rem;
 }
+
 ul{
     list-style-type: square;
 }
@@ -261,6 +262,14 @@ footer {
 /* Show hover text on card hover */
 .card:hover .hover-text {
     display: block;
+}
+
+#counterDisplay{
+    color: var(--orange);
+    font-family: var(--primary-font);
+    text-align: center;
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
 }
 
 #email-logo, #github-logo, #linkedin-logo {

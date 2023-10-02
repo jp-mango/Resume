@@ -17,23 +17,69 @@ window.addEventListener('scroll', () => {
 });
 
 // countdown timer
-const launchDate = new Date("2023-11-23T00:00:00Z").getTime();
-
-// Update the countdown every second
-const countdown = document.getElementById("countdown");
-const timer = setInterval(function () {
-    const now = new Date().getTime();
-    const distance = launchDate - now;
-
-    if (distance <= 0) {
-        clearInterval(timer);
-        countdown.innerHTML = "Website is live!";
+document.addEventListener("DOMContentLoaded", function() {
+    // Attempt to get the countdown element
+    const countdown = document.getElementById("countdown");
+    
+    // Check if the countdown element exists
+    if (countdown) {
+        // If it exists, set up the countdown
+        setupCountdown();
     } else {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        console.log("Countdown element not found. Skipping countdown setup.");
     }
-}, 1000);
+});
+
+function setupCountdown() {
+    const launchDate = new Date("2023-11-01T00:00:00Z").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    // Update the countdown every second
+    const timer = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        if (distance <= 0) {
+            clearInterval(timer);
+            countdown.innerHTML = "Website is live!";
+        } else {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+    }, 1000);
+}
+
+
+//calls my lambda function for a view counter
+function updateViewCounter() {
+    // Check if the current URL includes 'resume_home.html'
+    if (window.location.href.includes('resume_contact.html')) {
+
+        const increment = !localStorage.getItem('counted');
+
+        // Depending on the `increment` value, we append a query parameter to our API call
+        fetch(`https://5jbn8lba14.execute-api.us-east-1.amazonaws.com/default/ResumeVisitorCount?increment=${increment}`)
+            .then(response => response.json())
+            .then(data => {
+                const viewCount = data.viewCount;
+                const counterDisplayElement = document.getElementById("counterDisplay");
+                if (counterDisplayElement) {
+                    counterDisplayElement.innerText = `Total site visits: ${viewCount}`;
+                }
+                
+                // Mark the visitor as counted
+                if (increment) {
+                    localStorage.setItem('counted', 'true');
+                }
+            })
+            .catch(error => console.error('Error fetching view count:', error));
+    }
+}
+
+// Call the function when the window loads
+window.addEventListener('load', updateViewCounter);
