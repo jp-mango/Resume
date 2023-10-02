@@ -31,27 +31,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function setupCountdown() {
-    const launchDate = new Date("2023-11-01T00:00:00Z").getTime();
+    if (window.location.href.includes('resume_projects.html')) {
+        const launchDate = new Date("2023-11-01T00:00:00Z").getTime();
 
-    const countdown = document.getElementById("countdown");
+        const countdown = document.getElementById("countdown");
 
-    // Update the countdown every second
-    const timer = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = launchDate - now;
+        // Update the countdown every second
+        const timer = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
 
-        if (distance <= 0) {
-            clearInterval(timer);
-            countdown.innerHTML = "Website is live!";
-        } else {
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance <= 0) {
+                clearInterval(timer);
+                countdown.innerHTML = "Website is live!";
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-    }, 1000);
+                countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+        }, 1000);
+    }
 }
 
 
