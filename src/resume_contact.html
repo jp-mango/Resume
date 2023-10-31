@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Justin Menzies | Contact Me</title>
+		<link rel="icon" href="./images/cloud.png" />
+		<link rel="stylesheet" href="resume.css" />
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Roboto+Slab:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+		</style>
+	</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Justin Menzies | Contact Me</title>
-        <link rel="icon" href="./images/cloud.png">
-        <link rel="stylesheet" href="resume.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        </style>
-    </head>
+	<body>
+		<header>
+			<nav id="navbar" class="hidden-navbar">
+				<h1 class="name">Justin Menzies</h1>
+				<div class="nav-items" id="hamburger_content">
+					<li><a href="./resume_home.html">Home</a></li>
+					<li><a href="./resume_about.html">About</a></li>
+					<li><a href="./resume_projects.html">Projects</a></li>
+					<li><a href="./resume_contact.html">Contact</a></li>
+				</div>
+				<p id="counterDisplay">Total Site Visits: Loading...</p>
+			</nav>
+		</header>
 
-    <body>
-        <header>
-            <nav id="navbar" class="hidden-navbar">
-                <h1 class="name">Justin Menzies</h1>
-                <div class="nav-items" id="hamburger_content">
-                    <li><a href="./resume_home.html">Home</a></li>
-                    <li><a href="./resume_about.html">About</a></li>
-                    <li><a href="./resume_projects.html">Projects</a></li>
-                    <li><a href="./resume_contact.html">Contact</a></li>
-                </div> 
-                <p id="counterDisplay">Total Site Visits: Loading...</p>
-            </nav>
+		<main class="project-content">
+			<div class="card-container">
+				<div class="card">
+					<a href="mailto:hi@justinmenzies.com" target="_blank">
+						<div class="card-content">
+							<img src="./images/email envelope-orange.png" alt="Email Image" />
+							<p class="hover-text">
+								Click to email me at: hi@justinmenzies.com
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="card">
+					<a href="https://github.com/jp-mango" target="_blank">
+						<div class="card-content">
+							<img src="./images/github logo-orange.png" alt="GitHub Logo" />
+							<p class="hover-text">View my GitHub repositories</p>
+						</div>
+					</a>
+				</div>
+				<div class="card">
+					<a
+						href="https://www.linkedin.com/in/justin-menzies-926464192/"
+						target="_blank"
+					>
+						<div class="card-content">
+							<img src="./images/linkedin logo-orange.png" alt="GitHub Logo" />
+							<p class="hover-text">Connect with me on LinkedIn</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</main>
+		<script src="resume.js"></script>
+	</body>
 
-        </header>
-
-        <main class="project-content">
-            <div class="card-container">
-                <div class="card">
-                    <a href="mailto:hi@justinmenzies.com" target="_blank">
-                        <div class="card-content">
-                            <img src="./images/email envelope-orange.png" alt="Email Image">
-                            <p class="hover-text">Click to email me at: hi@justinmenzies.com</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="https://github.com/jp-mango" target="_blank">
-                        <div class="card-content">
-                            <img src="./images/github logo-orange.png" alt="GitHub Logo">
-                            <p class="hover-text">View my GitHub repositories</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="https://www.linkedin.com/in/justin-menzies-926464192/" target="_blank">
-                        <div class="card-content">
-                            <img src="./images/linkedin logo-orange.png" alt="GitHub Logo">
-                            <p class="hover-text">Connect with me on LinkedIn</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </main>
-        <script src="resume.js"></script>
-    </body>
-
-    <footer>
-    </footer>
+	<footer></footer>
 </html>
