@@ -3,7 +3,7 @@ name: Deploy to S3
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   build:
@@ -12,18 +12,22 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Set AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      
+
       - name: Empty S3 Bucket
         run: |
-            aws s3 rm s3://justinmenzies.com --recursive
-      
+          aws s3 rm s3://justinmenzies.com --recursive
+
       - name: Copy to S3
-        run: | 
-            aws s3 sync ./src/ s3://justinmenzies.com
+        run: |
+          aws s3 sync ./src/ s3://justinmenzies.com
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{secrets.DISTRIBUTION_ID}} --paths /resume_contact.html /resume.js /resume.css /resume_home.html /resume_about.html /resume_projects.html
