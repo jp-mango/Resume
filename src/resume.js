@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setupCountdown() {
 	if (window.location.href.includes('resume_projects.html')) {
-		const launchDate = new Date('2024-01-01T00:00:00Z').getTime();
+		const launchDate = new Date('2024-02-01T00:00:00Z').getTime();
 
 		const countdown = document.getElementById('countdown');
 
