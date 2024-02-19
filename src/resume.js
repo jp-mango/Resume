@@ -61,7 +61,7 @@ function setupCountdown() {
 //calls my lambda function for a view counter
 function updateViewCounter() {
   // Check if the current URL includes 'resume_home.html'
-  if (window.location.href.includes('resume_contact.html')) {
+  if (window.location.href.includes('resume_home.html')) {
     const increment = !localStorage.getItem('counted');
 
     // Depending on the `increment` value, we append a query parameter to our API call
@@ -87,3 +87,15 @@ function updateViewCounter() {
 
 // Call the function when the window loads
 window.addEventListener('load', updateViewCounter);
+
+// Get all nav links
+const navLinks = document.querySelectorAll('.nav-items a');
+
+// Loop through each link
+navLinks.forEach((link) => {
+  // Check if the link's href matches the current URL
+  if (link.href === window.location.href) {
+    // Add the 'active' class to the matching link
+    link.classList.add('active');
+  }
+});
