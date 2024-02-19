@@ -61,7 +61,7 @@ function setupCountdown() {
 //calls my lambda function for a view counter
 function updateViewCounter() {
   // Check if the current URL includes 'resume_home.html'
-  if (window.location.href.includes('resume_home.html')) {
+  if (window.location.href.includes('resume_contact.html')) {
     const increment = !localStorage.getItem('counted');
 
     // Depending on the `increment` value, we append a query parameter to our API call
