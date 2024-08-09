@@ -146,12 +146,16 @@ html {
   margin: 1rem;
 }
 
-.education li {
-  margin: 1rem;
-}
-
 .experience li p {
   margin: 0;
+}
+
+.education {
+  padding-top: 5rem;
+}
+
+.education li {
+  margin: 0.5rem;
 }
 
 .education li p {
