@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setupCountdown() {
   if (window.location.href.includes('resume_projects.html')) {
-    const launchDate = new Date('2025-01-01T00:00:00Z').getTime();
+    const launchDate = new Date('2028-01-01T00:00:00Z').getTime();
 
     const countdown = document.getElementById('countdown');
 
@@ -47,7 +47,7 @@ function setupCountdown() {
       } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -66,7 +66,7 @@ function updateViewCounter() {
 
     // Depending on the `increment` value, we append a query parameter to our API call
     fetch(
-      `https://5jbn8lba14.execute-api.us-east-1.amazonaws.com/default/ResumeVisitorCount?increment=${increment}`
+      `https://5jbn8lba14.execute-api.us-east-1.amazonaws.com/default/ResumeVisitorCount?increment=${increment}`,
     )
       .then((response) => response.json())
       .then((data) => {
